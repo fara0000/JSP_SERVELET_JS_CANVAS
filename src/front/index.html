@@ -18,62 +18,64 @@
                 <strong>P3212 Вариант: 3156</strong>
             </p>
         </header>
-        <div id="img">
-            <img src="images/Screenshot_1.png">
+        <div class="main">
+            <div id="img">
+                <img src="images/Screenshot_1.png" width="300px">
+            </div>
+            <form id="form" name="form" action="checkPoints" method="GET">
+                <p>Выберите X:</p>
+                <div class="form__container" id="form__input__wrapper">
+                    <input
+                        type="text"
+                        maxlength="6"
+                        class="x_input"
+                        id="form__input"
+                        placeholder="choose a number between (-5,3)"
+                        name = "coordinate_x"
+                        autocomplete="off"
+                    />
+                </div>
+                <p>Выберите Y:</p>
+                <div class="button_block">
+                    <button type="button" class="y_button" id="y_-2.0" onclick="changeY('-2.0')">-2.0
+                    </button>
+                    <button type="button" class="y_button" id="y_-1.5" onclick="changeY('-1.5')">-1.5
+                    </button>
+                    <button type="button" class="y_button" id="y_-1.0" onclick="changeY('-1.0')">-1.0
+                    </button>
+                    <button type="button" class="y_button" id="y_-0.5" onclick="changeY('-0.5')">-0.5
+                    </button>
+                    <button type="button" class="y_button" id="y_0" onclick="changeY('0')">0
+                    </button>
+                    <button type="button" class="y_button" id="y_0.5" onclick="changeY('0.5')">0.5
+                    </button>
+                    <button type="button" class="y_button" id="y_1.0" onclick="changeY('1.0')">1.0
+                    </button>
+                    <button type="button" class="y_button" id="y_1.5" onclick="changeY('1.5')">1.5
+                    </button>
+                    <button type="button" class="y_button" id="y_2.0" onclick="changeY('2.0')">2.0
+                    </button>
+                    <input type="hidden" id="y_select" name="coordinate_y">
+                </div>
+                <p>Выберите R:</p>
+                <div class="form__container" id="form__radio__wrapper"> 
+                    <input type = "radio" name = "coordinate_r" class="radio_input" value = "1">
+                    <label class="radio_label">1</label>
+                    <input type = "radio" name = "coordinate_r" class="radio_input" value = "2">
+                    <label class="radio_label">2</label>
+                    <input type = "radio" name = "coordinate_r" class="radio_input" value = "3">
+                    <label class="radio_label">3</label>
+                    <input type = "radio" name = "coordinate_r" class="radio_input" value = "4">
+                    <label class="radio_label">4</label>
+                    <input type = "radio" name = "coordinate_r" class="radio_input" value = "5">
+                    <label class="radio_label">5</label>
+                </div>
+                <div class="form__container" id="check__button__wrapper">
+                    <button type="submit" id="check__button">Проверить!</button>
+                </div>
+                <!-- <p id = "notification" name = "notification"></p> -->
+            </form>
         </div>
-        <form id="form" name="form" action="checkPoints" method="GET">
-            <p>Выберите X:</p>
-            <div class="form__container" id="form__input__wrapper">
-                <input
-                    type="text"
-                    maxlength="6"
-                    class="x_input"
-                    id="form__input"
-                    placeholder="choose a number between (-5,3)"
-                    name = "coordinate_x"
-                    autocomplete="off"
-                />
-            </div>
-            <p>Выберите Y:</p>
-            <div class="button_block">
-                <button type="button" class="y_button" id="y_-2.0" onclick="changeY('-2.0')">-2.0
-                </button>
-                <button type="button" class="y_button" id="y_-1.5" onclick="changeY('-1.5')">-1.5
-                </button>
-                <button type="button" class="y_button" id="y_-1.0" onclick="changeY('-1.0')">-1.0
-                </button>
-                <button type="button" class="y_button" id="y_-0.5" onclick="changeY('-0.5')">-0.5
-                </button>
-                <button type="button" class="y_button" id="y_0" onclick="changeY('0')">0
-                </button>
-                <button type="button" class="y_button" id="y_0.5" onclick="changeY('0.5')">0.5
-                </button>
-                <button type="button" class="y_button" id="y_1.0" onclick="changeY('1.0')">1.0
-                </button>
-                <button type="button" class="y_button" id="y_1.5" onclick="changeY('1.5')">1.5
-                </button>
-                <button type="button" class="y_button" id="y_2.0" onclick="changeY('2.0')">2.0
-                </button>
-                <input type="hidden" id="y_select" name="coordinate_y">
-            </div>
-            <p>Выберите R:</p>
-            <div class="form__container" id="form__radio__wrapper"> 
-                <input type = "radio" name = "coordinate_r" class="radio_input" value = "1">
-                <label class="radio_label">1</label>
-                <input type = "radio" name = "coordinate_r" class="radio_input" value = "2">
-                <label class="radio_label">2</label>
-                <input type = "radio" name = "coordinate_r" class="radio_input" value = "3">
-                <label class="radio_label">3</label>
-                <input type = "radio" name = "coordinate_r" class="radio_input" value = "4">
-                <label class="radio_label">4</label>
-                <input type = "radio" name = "coordinate_r" class="radio_input" value = "5">
-                <label class="radio_label">5</label>
-            </div>
-            <div class="form__container" id="check__button__wrapper">
-                <input type="submit" id="check__button" value="Проверить!"/>
-            </div>
-            <!-- <p id = "notification" name = "notification"></p> -->
-        </form>
         <footer class="footer">
             <div class="footer_text">
                 Санкт-Петербург, ИТМО

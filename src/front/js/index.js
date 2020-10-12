@@ -1,14 +1,16 @@
 let form = document.getElementById("#form"),
     x = document.getElementById("form__input"),
     y = document.getElementById("y_select"),
-    r = document.getElementById("r_select");
+    r = document.getElementById("r_select"),
+    check_button = document.getElementById("check__button");
 
 function checkX() {
     let xVal = x.value;
-    if (xVal.trim() === "" || !isFinite(xVal) || (xVal>= 2 || xVal <= -4) || !/^[0-9 | . | -]+$/i.test(xVal)) {
+    if ((xVal > 2 || xVal < -4) || !/^[0-9 | . | -]+$/i.test(xVal)) {
         x.classList.add("error");
         return false;
     }
+    x.classList.remove("error");
     return true;
 }
 
@@ -19,7 +21,7 @@ function checkY() {
         return false;
     }
     buttons.forEach(button => button.classList.remove("error"));
-    canvasContainer.classList.remove("error");
+    // canvasContainer.classList.remove("error");
     return true;
 }
 
@@ -46,15 +48,23 @@ function checkR() {
     return true;
 }
 
-form.addEventListener("submit", function (e) {
-    if (!checkX() || !checkY() || !checkR()) {
-        e.preventDefault();
-    } else if (checkX() && checkY() && checkR()) {
-        console.log('5');
+function validateData() {
+    if(!checkX()) {
+        check_button.disabled = true;
+        console.log('x is false')
     }
-});
+    else if(!checkY()) {
+        check_button.disabled = true;
+        console.log('y is false')
+    } 
+    // else if(!checkR()) {
+    //     check_button.disabled = true;
+    //     console.log('r is false')
+    // }
+    else {
+        check_button.disabled = false;
+        console.log('goo');
+    }
+}
 
-x.addEventListener("input", function () {
-    x.classList.remove("error");
-
-});
+setInterval(validateData,100);
