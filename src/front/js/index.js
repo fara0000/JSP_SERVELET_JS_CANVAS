@@ -51,16 +51,13 @@ function checkR() {
 function validateData() {
     if(!checkX()) {
         check_button.disabled = true;
-        console.log('x is false')
     }
     else if(!checkY()) {
         check_button.disabled = true;
-        console.log('y is false')
     } 
-    // else if(!checkR()) {
-    //     check_button.disabled = true;
-    //     console.log('r is false')
-    // }
+    else if(!checkR()) {
+        check_button.disabled = true;
+    }
     else {
         check_button.disabled = false;
         console.log('goo');
