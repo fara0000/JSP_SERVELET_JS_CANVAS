@@ -6,7 +6,24 @@
 }
 
 .footer {
-    flex: 0 0 auto;
+    flex: 1 0 auto;
+    display: flex;
+    width: 100%;
+    align-items: flex-end;
+    justify-content: center;
+    font-size: x-large;
+    color: #5c59ec;
+}
+
+#areas {
+    background: url("images/Screenshot_1.png") center no-repeat;
+    background-size: contain;
+}
+
+#visualization_container {
+    border: 3px solid #5c59ec;
+    height: 325px;
+    width: 325px;
 }
 
 .selected {
@@ -19,20 +36,6 @@
     box-shadow: 0 4px 4px #94002D !important;
     border-color: #94002D !important;
     background-color: #E40045 !important;
-}
-
-footer {
-    width: 100%;
-    color: #439400;
-    padding: 5px;
-    min-width: 1100px;
-}
-
-footer .footer_text {
-    width: 100%;
-    display: inline-block;
-    text-align: center;
-    font-size: larger;
 }
 
 #root {
@@ -73,11 +76,13 @@ img {
     display: flex;
     flex-direction: row;
     width: 100%;
+    justify-content: space-around;
+    align-items: center;
 }
 
 form {
     min-height: 490px;
-    width: 40%;
+    width: 34%;
     margin: 2%;
     box-shadow: 0 0 0 3px rgb(226 226 226);
     background: #fff;
@@ -189,7 +194,7 @@ form p {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 8%;
+    margin: 20px 0 10px 0;
 }
 
 #check__button {
@@ -208,14 +213,6 @@ form p {
 
 #check__button:disabled {
     opacity: 0.3;
-}
-
-#notification {
-    color: red;
-    font-family: sans-serif;
-    font-weight: 500;
-    font-size: 28px;
-    font-weight: bold;
 }
 /*result of table from back*/
 

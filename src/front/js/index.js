@@ -6,7 +6,7 @@ let form = document.getElementById("#form"),
 
 function checkX() {
     let xVal = x.value;
-    if ((xVal > 2 || xVal < -4) || !/^[0-9 | . | -]+$/i.test(xVal)) {
+    if ((xVal !== '' || xVal > 2 || xVal < -4) || !/^[0-9 | . | -]+$/i.test(xVal)) {
         x.classList.add("error");
         return false;
     }
