@@ -1,12 +1,16 @@
-let form = document.getElementById("#form"),
-    x = document.getElementById("form__input"),
-    y = document.getElementById("y_select"),
-    r = document.getElementById("r_select"),
-    check_button = document.getElementById("check__button");
+const x = document.getElementById("form__input"),
+      y = document.getElementById("y_select"),
+      r = document.getElementById("r_select"),
+      buttons = document.querySelectorAll(".y_button"),
+      r_classList = document.querySelectorAll(".radio_input"),
+      check_button = document.getElementById("check__button");
 
 function checkX() {
     let xVal = x.value;
-    if ((xVal !== '' || xVal > 2 || xVal < -4) || !/^[0-9 | . | -]+$/i.test(xVal)) {
+    if(xVal === '') {
+        return false;
+    }
+    if ((xVal > 2 || xVal < -4) || !/^[0-9 | . | - ]+$/i.test(xVal) || /^[ ]+$/.test(xVal) || xVal === '.') {
         x.classList.add("error");
         return false;
     }
@@ -15,7 +19,6 @@ function checkX() {
 }
 
 function checkY() {
-    let buttons = document.querySelectorAll(".y_button");
     if (y.value === "") {
         buttons.forEach(button => button.classList.add("error"));
         return false;
@@ -40,11 +43,17 @@ function changeY(yValue) {
     }
 }
 
+function getRValue (value){
+    r.value = value;
+    console.log(r.value);
+}
+
 function checkR() {
-    if (r.value === "") {
-        r.classList.add("error");
+    if(r.value === ''){
+        r_classList.forEach(item => item.classList.add("error"));
         return false;
     }
+    r_classList.forEach(item => item.classList.remove("error"));
     return true;
 }
 
@@ -54,13 +63,12 @@ function validateData() {
     }
     else if(!checkY()) {
         check_button.disabled = true;
-    } 
+    }
     else if(!checkR()) {
         check_button.disabled = true;
     }
     else {
         check_button.disabled = false;
-        console.log('goo');
     }
 }
 

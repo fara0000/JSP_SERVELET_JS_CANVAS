@@ -26,13 +26,13 @@
                 <p>Выберите X:</p>
                 <div class="form__container" id="form__input__wrapper">
                     <input
-                        type="text"
-                        maxlength="6"
-                        class="x_input"
-                        id="form__input"
-                        placeholder="choose a number between (-5,3)"
-                        name = "coordinate_x"
-                        autocomplete="off"
+                            type="text"
+                            maxlength="6"
+                            class="x_input"
+                            id="form__input"
+                            placeholder="choose a number between (-5,3)"
+                            name = "coordinate_x"
+                            autocomplete="off"
                     />
                 </div>
                 <p>Выберите Y:</p>
@@ -58,33 +58,50 @@
                     <input type="hidden" id="y_select" name="coordinate_y">
                 </div>
                 <p>Выберите R:</p>
-                <div class="form__container" id="form__radio__wrapper"> 
-                    <input type = "radio" name = "coordinate_r" class="radio_input" value = "1">
+                <div class="form__container" id="form__radio__wrapper">
+                    <input type = "radio" name = "coordinate_r" class="radio_input" value = "1" onclick="getRValue('1')">
                     <label class="radio_label">1</label>
-                    <input type = "radio" name = "coordinate_r" class="radio_input" value = "2">
+                    <input type = "radio" name = "coordinate_r" class="radio_input" value = "2" onclick="getRValue('2')">
                     <label class="radio_label">2</label>
-                    <input type = "radio" name = "coordinate_r" class="radio_input" value = "3">
+                    <input type = "radio" name = "coordinate_r" class="radio_input" value = "3" onclick="getRValue('3')">
                     <label class="radio_label">3</label>
-                    <input type = "radio" name = "coordinate_r" class="radio_input" value = "4">
+                    <input type = "radio" name = "coordinate_r" class="radio_input" value = "4" onclick="getRValue('4')">
                     <label class="radio_label">4</label>
-                    <input type = "radio" name = "coordinate_r" class="radio_input" value = "5">
+                    <input type = "radio" name = "coordinate_r" class="radio_input" value = "5" onclick="getRValue('5')">
                     <label class="radio_label">5</label>
-                    <input type="hidden" id="r_select" name="coordinate_r">
+                    <input type="hidden" id="r_select" value="">
                 </div>
                 <div class="form__container" id="check__button__wrapper">
                     <button type="submit" id="check__button">Проверить!</button>
                 </div>
-                <!-- <p id = "notification" name = "notification"></p> -->
             </form>
+            <div class="table_container result_table">
+                <table>
+                    <tr>
+                        <th>X</th>
+                        <th>Y</th>
+                        <th>R</th>
+                        <th>Время запуска</th>
+                        <th>Время работы</th>
+                        <th>Результат</th>
+                    </tr>
+                    <td>1</td>
+                    <td>5</td>
+                    <td>2.99999</td>
+                    <td>asdasd</td>
+                    <td>0.34434</td>
+                    <td>попало!</td>
+                </table>
+            </div>
         </div>
         <footer class="footer">
             <div class="footer_text">
                 Санкт-Петербург, ИТМО
             </div>
         </footer>
+        </div>
     </div>
-    </div>
-    <script src="./js/index.js"></script>
-    <script src="./js/canvas.js"></script>
+<script src="./js/index.js"></script>
+<script src="./js/canvas.js"></script>
 </body>
 </html>

@@ -65,13 +65,6 @@ header p {
     font-size: 27px;
 }
 
-img {
-    height: 250px;
-    width: 330px;
-    margin-top: 5%;
-    background: white;
-}
-
 .main {
     display: flex;
     flex-direction: row;
@@ -81,8 +74,8 @@ img {
 }
 
 form {
-    min-height: 490px;
-    width: 34%;
+    min-height: 480px;
+    width: 31%;
     margin: 2%;
     box-shadow: 0 0 0 3px rgb(226 226 226);
     background: #fff;
@@ -113,21 +106,6 @@ form p {
     justify-content: center;
 }
 
-.x-button {
-    height: 38px;
-    width: 60px;
-    outline: none;
-    border: 1px solid rgb(212 226 228);
-    cursor: pointer;
-    margin-left: 1%;
-    text-align: center;
-    border-radius: 18px;
-    font-size: x-large;
-    font-family: sans-serif;
-    background-color: #ffffff;
-    user-select: none;
-}
-
 .selected {
     border: 4px solid rgb(226, 240, 27);
     user-select: none;
@@ -141,6 +119,8 @@ form p {
 }
 
 #form__radio__wrapper {
+    width: 100%;
+    height: 10%;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -176,7 +156,7 @@ form p {
 }
 
 .x_input {
-    width: 55%;
+    width: 68%;
     height: 48px;
     font-size: x-large;
     font-family: sans-serif;
@@ -187,7 +167,7 @@ form p {
 }
 
 .x_input:focus {
-    border: 1px solid #93b7d6;
+    border: 2px solid #93b7d6;
 }
 
 #check__button__wrapper {
@@ -214,13 +194,18 @@ form p {
 #check__button:disabled {
     opacity: 0.3;
 }
+
+.table_container {
+    display: flex;
+    height: 90%;
+}
 /*result of table from back*/
 
 table {
-    width: 53%;
+    width: auto;
     border-collapse: collapse;
-    margin:50px auto;
     cursor: pointer;
+    margin-top: 2%;
 }
 
 /* Zebra striping */
