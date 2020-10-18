@@ -6,7 +6,7 @@
          version="4.0">
     <servlet>
         <servlet-name>controllerServlet</servlet-name>
-        <servlet-class>java.servlets.ControllerServlet</servlet-class>
+        <servlet-class>lab2.servlets.ControllerServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>controllerServlet</servlet-name>
@@ -15,7 +15,7 @@
 
     <servlet>
         <servlet-name>areaCheckServlet</servlet-name>
-        <servlet-class>java.servlets.AreaCheckServlet</servlet-class>
+        <servlet-class>lab2.servlets.AreaCheckServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>areaCheckServlet</servlet-name>

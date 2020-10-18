@@ -1,3 +1,9 @@
+<%@ page contentType="text/html;charset=UTF-8" %>
+<%@ page import="lab2.models.TableRow" %>
+<%@ page import="java.util.List" %>
+<%
+    List<TableRow> tableRows = (List<TableRow>) session.getAttribute("tableRows");
+%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -59,63 +65,42 @@
                 </div>
                 <p>Выберите R:</p>
                 <div class="form__container" id="form__radio__wrapper">
-<!--                    <input type = "radio" name = "coordinate_r" class="radio_input" value = "1" onclick="getRValue('1')">-->
-<!--                    <label class="radio_label">1</label>-->
-<!--                    <input type = "radio" name = "coordinate_r" class="radio_input" value = "2" onclick="getRValue('2')">-->
-<!--                    <label class="radio_label">2</label>-->
-<!--                    <input type = "radio" name = "coordinate_r" class="radio_input" value = "3" onclick="getRValue('3')">-->
-<!--                    <label class="radio_label">3</label>-->
-<!--                    <input type = "radio" name = "coordinate_r" class="radio_input" value = "4" onclick="getRValue('4')">-->
-<!--                    <label class="radio_label">4</label>-->
-<!--                    <input type = "radio" name = "coordinate_r" class="radio_input" value = "5" onclick="getRValue('5')">-->
-<!--                    <label class="radio_label">5</label>-->
-<!--                    <input type="hidden" id="r_select" value="">-->
                     <label class="radio-button">
-                        <input type = "radio" name = "coordinate_r" class="radio_input" value = "1" onclick="getRValue('1')">
+                        <input type = "radio" class="radio_input" name="r" value = "1" onclick="getRValue('1')">
                         <span class="label-visible">
                             <span class="fake-radiobutton"></span>
                             <p class="radio_button_text">1</p>
                         </span>
                     </label>
                     <label class="radio-button">
-                        <input type = "radio" name = "coordinate_r" class="radio_input" value = "2" onclick="getRValue('2')">
+                        <input type = "radio" class="radio_input" name="r" value = "2" onclick="getRValue('2')">
                         <span class="label-visible">
                             <span class="fake-radiobutton"></span>
                             <p class="radio_button_text">2</p>
                         </span>
                     </label>
                     <label class="radio-button">
-                        <input type = "radio" name = "coordinate_r" class="radio_input" value = "3" onclick="getRValue('3')">
+                        <input type = "radio" class="radio_input" name="r" value = "3" onclick="getRValue('3')">
                         <span class="label-visible">
                             <span class="fake-radiobutton"></span>
                             <p class="radio_button_text">3</p>
                         </span>
                     </label>
                     <label class="radio-button">
-                        <input type = "radio" name = "coordinate_r" class="radio_input" value = "4" onclick="getRValue('4')">
+                        <input type = "radio" class="radio_input" name="r" value = "4" onclick="getRValue('4')">
                         <span class="label-visible">
                             <span class="fake-radiobutton"></span>
                             <p class="radio_button_text">4</p>
                         </span>
                     </label>
                     <label class="radio-button">
-                        <input type = "radio" name = "coordinate_r" class="radio_input" value = "5" onclick="getRValue('5')">
+                        <input type = "radio" class="radio_input" name="r" value = "5" onclick="getRValue('5')">
                         <span class="label-visible">
                             <span class="fake-radiobutton"></span>
                             <p class="radio_button_text">5</p>
                         </span>
                     </label>
-<!--                    <input type = "radio" name = "coordinate_r" class="radio_input" value = "1" onclick="getRValue('1')">-->
-<!--                    <label class="radio_label">1</label>-->
-<!--                    <input type = "radio" name = "coordinate_r" class="radio_input" value = "2" onclick="getRValue('2')">-->
-<!--                    <label class="radio_label">2</label>-->
-<!--                    <input type = "radio" name = "coordinate_r" class="radio_input" value = "3" onclick="getRValue('3')">-->
-<!--                    <label class="radio_label">3</label>-->
-<!--                    <input type = "radio" name = "coordinate_r" class="radio_input" value = "4" onclick="getRValue('4')">-->
-<!--                    <label class="radio_label">4</label>-->
-<!--                    <input type = "radio" name = "coordinate_r" class="radio_input" value = "5" onclick="getRValue('5')">-->
-<!--                    <label class="radio_label">5</label>-->
-                    <input type="hidden" id="r_select" value="">
+                    <input type="hidden" id="r_select" name="coordinate_r" value="">
                 </div>
                 <div class="form__container" id="check__button__wrapper">
                     <button type="submit" id="check__button">Проверить!</button>
@@ -131,12 +116,31 @@
                         <th>Время работы</th>
                         <th>Результат</th>
                     </tr>
-                    <td>1</td>
-                    <td>5</td>
-                    <td>2.99999</td>
-                    <td>asdasd</td>
-                    <td>0.34434</td>
-                    <td>попало!</td>
+                    <%
+                        if (tableRows != null)
+                            for (TableRow tableRow : tableRows) {
+                    %>
+                    <tr>
+                        <td class="x_cell">
+                            <%= tableRow.getX() %>
+                        </td>
+                        <td class="y_cell">
+                            <%= tableRow.getY() %>
+                        </td>
+                        <td class="r_cell">
+                            <%= tableRow.getR() %>
+                        </td>
+                        <td>
+                            <%= tableRow.getCurrentTime() %>
+                        </td>
+                        <td>
+                            <%= tableRow.getTime() %>
+                        </td>
+                        <td>
+                            <%= tableRow.getResult() %>
+                        </td>
+                    </tr>
+                    <%}%>
                 </table>
             </div>
         </div>
@@ -147,7 +151,7 @@
         </footer>
         </div>
     </div>
-<script src="./js/index.js"></script>
-<script src="./js/canvas.js"></script>
+<script src="js/index.js"></script>
+<script src="js/canvas.js"></script>
 </body>
 </html>

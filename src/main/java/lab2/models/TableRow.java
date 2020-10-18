@@ -1,4 +1,4 @@
-package java.models;
+package lab2.models;
 
 public class TableRow {
     private int x;

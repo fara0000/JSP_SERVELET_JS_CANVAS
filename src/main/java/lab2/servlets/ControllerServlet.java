@@ -1,4 +1,4 @@
-package java.servlets;
+package lab2.servlets;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;

@@ -1,6 +1,6 @@
-package java.servlets;
+package lab2.servlets;
 
-import java.models.TableRow;
+import lab2.models.TableRow;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
