@@ -46,9 +46,9 @@ public class AreaCheckServlet extends HttpServlet {
         if (x == 0) {
             return (y <= r && y >= -r / 2);
         } else if (x > 0) {
-            return (x * x + y * y <= r * r / 4); //окружность
-        } else return (y <= x + r && y >= 0) //треугольник
-                || (x >= -r && y >= -r / 2 && y <= 0); //прямоугольник
+            return (x * x + y * y <= r * r / 4);
+        } else return (y <= x + r && y >= 0)
+                || (x >= -r && y >= -r / 2 && y <= 0);
     }
 
     private boolean checkValues(double x, double y, int r) {

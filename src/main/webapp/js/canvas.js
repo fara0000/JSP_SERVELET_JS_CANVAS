@@ -7,7 +7,7 @@ let canvasR = 117;
 canvas.addEventListener("click", function (e) {
     let canvasX = e.pageX - this.offsetLeft,
         canvasY = e.pageY - this.offsetTop;
-    if (!checkR()) {
+    if (checkR()) {
         sendDataToForm(canvasX - width / 2, width / 2 - canvasY);
         drawPoints(canvasX, canvasY);
     } else canvasContainer.classList.add("error");
@@ -26,7 +26,7 @@ window.onload = function () {
 function sendDataToForm(xVal, yVal) {
     x.value = Math.round(xVal * r.value / canvasR);
     y.value = (yVal * r.value / canvasR).toString().substr(0, 6);
-    document.form.submit();
+    form.submit();
 }
 
 function drawPoints(canvasX, canvasY) {

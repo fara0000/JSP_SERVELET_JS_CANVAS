@@ -1,13 +1,14 @@
 const x = document.getElementById("form__input"),
-      y = document.getElementById("y_select"),
-      r = document.getElementById("r_select"),
-      buttons = document.querySelectorAll(".y_button"),
-      r_classList = document.querySelectorAll(".radio_input"),
-      check_button = document.getElementById("check__button");
+    y = document.getElementById("y_select"),
+    r = document.getElementById("r_select"),
+    form = document.getElementById("form"),
+    buttons = document.querySelectorAll(".y_button"),
+    r_classList = document.querySelectorAll(".radio_input"),
+    check_button = document.getElementById("check__button");
 
 function checkX() {
     let xVal = x.value;
-    if(xVal === '') {
+    if (xVal === '') {
         return false;
     }
     if (xVal > 2 || xVal < -4 || xVal === '.') {
@@ -43,13 +44,13 @@ function changeY(yValue) {
     }
 }
 
-function getRValue (value){
+function getRValue(value) {
     r.value = value;
     console.log(r.value);
 }
 
 function checkR() {
-    if(r.value === ''){
+    if (r.value === '') {
         r_classList.forEach(item => item.classList.add("error"));
         return false;
     }
@@ -58,18 +59,15 @@ function checkR() {
 }
 
 function validateData() {
-    if(!checkX()) {
+    if (!checkX()) {
         check_button.disabled = true;
-    }
-    else if(!checkY()) {
+    } else if (!checkY()) {
         check_button.disabled = true;
-    }
-    else if(!checkR()) {
+    } else if (!checkR()) {
         check_button.disabled = true;
-    }
-    else {
+    } else {
         check_button.disabled = false;
     }
 }
 
-setInterval(validateData,100);
+setInterval(validateData, 100);
