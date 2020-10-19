@@ -66,41 +66,41 @@
                 <p>Выберите R:</p>
                 <div class="form__container" id="form__radio__wrapper">
                     <label class="radio-button">
-                        <input type = "radio" class="radio_input" name="r" value = "1" onclick="getRValue('1')">
+                        <input type = "radio" class="radio_input" name="coordinate_r" value = "1" onclick="getRValue('1')">
                         <span class="label-visible">
                             <span class="fake-radiobutton"></span>
                             <p class="radio_button_text">1</p>
                         </span>
                     </label>
                     <label class="radio-button">
-                        <input type = "radio" class="radio_input" name="r" value = "2" onclick="getRValue('2')">
+                        <input type = "radio" class="radio_input" name="coordinate_r" value = "2" onclick="getRValue('2')">
                         <span class="label-visible">
                             <span class="fake-radiobutton"></span>
                             <p class="radio_button_text">2</p>
                         </span>
                     </label>
                     <label class="radio-button">
-                        <input type = "radio" class="radio_input" name="r" value = "3" onclick="getRValue('3')">
+                        <input type = "radio" class="radio_input" name="coordinate_r" value = "3" onclick="getRValue('3')">
                         <span class="label-visible">
                             <span class="fake-radiobutton"></span>
                             <p class="radio_button_text">3</p>
                         </span>
                     </label>
                     <label class="radio-button">
-                        <input type = "radio" class="radio_input" name="r" value = "4" onclick="getRValue('4')">
+                        <input type = "radio" class="radio_input" name="coordinate_r" value = "4" onclick="getRValue('4')">
                         <span class="label-visible">
                             <span class="fake-radiobutton"></span>
                             <p class="radio_button_text">4</p>
                         </span>
                     </label>
                     <label class="radio-button">
-                        <input type = "radio" class="radio_input" name="r" value = "5" onclick="getRValue('5')">
+                        <input type = "radio" class="radio_input" name="coordinate_r" value = "5" onclick="getRValue('5')">
                         <span class="label-visible">
                             <span class="fake-radiobutton"></span>
                             <p class="radio_button_text">5</p>
                         </span>
                     </label>
-                    <input type="hidden" id="r_select" name="coordinate_r" value="">
+                    <input type="hidden" id="r_select" value="">
                 </div>
                 <div class="form__container" id="check__button__wrapper">
                     <button type="submit" id="check__button">Проверить!</button>

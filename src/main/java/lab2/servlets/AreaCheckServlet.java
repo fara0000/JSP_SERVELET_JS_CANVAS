@@ -18,13 +18,13 @@ public class AreaCheckServlet extends HttpServlet {
             List<TableRow> tableRows = session.getAttribute("tableRows") == null ? new ArrayList<TableRow>() : (List<TableRow>) session.getAttribute("tableRows");
             long startTime = System.nanoTime();
             String currentTime = new Date().toString();
-            int x = Integer.parseInt(request.getParameter("coordinate_x"));
-            String yValue = request.getParameter("coordinate_y").replace(',', '.');
-            if (yValue.length() > 6) {
-                yValue = yValue.substring(0, 6);
+            String xValue = request.getParameter("coordinate_x").replace(',', '.');
+            if (xValue.length() > 6) {
+                xValue = xValue.substring(0, 6);
             }
-            double y = Double.parseDouble(yValue);
-            double r = Double.parseDouble(request.getParameter("coordinate_r").replace(',', '.'));
+            double x = Double.parseDouble(xValue);
+            double y = Double.parseDouble(request.getParameter("coordinate_y").replace(',', '.'));
+            int r = Integer.parseInt(request.getParameter("coordinate_r"));
             if (checkValues(x, y, r)) {
                 String result = checkArea(x, y, r) ? "<span style='color: #439400'>Попала</span>" : "<span style='color: #94002D'>Не попала</span>";
                 long endTime = System.nanoTime();
@@ -42,7 +42,7 @@ public class AreaCheckServlet extends HttpServlet {
         }
     }
 
-    private boolean checkArea(int x, double y, double r) {
+    private boolean checkArea(double x, double y, int r) {
         if (x == 0) {
             return (y <= r && y >= -r / 2);
         } else if (x > 0) {
@@ -51,9 +51,9 @@ public class AreaCheckServlet extends HttpServlet {
                 || (x >= -r && y >= -r / 2 && y <= 0); //прямоугольник
     }
 
-    private boolean checkValues(int x, double y, double r) {
-        return Arrays.asList(-3, -2, -1, 0, 1, 2, 3, 4, 5).contains(x) &&
-                (y < 3 && y > -3) &&
-                Arrays.asList(1.0, 1.5, 2.0, 2.5, 3.0).contains(r);
+    private boolean checkValues(double x, double y, int r) {
+        return (x < 3 && x > -5) &&
+                Arrays.asList(-2.0, -1.5, -1.0, -0.5, 0, 0.5, 1.5, 2.0).contains(y) &&
+                Arrays.asList(1, 2, 3, 4, 5).contains(r);
     }
 }

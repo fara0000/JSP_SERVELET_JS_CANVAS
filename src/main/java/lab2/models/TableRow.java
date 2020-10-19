@@ -1,14 +1,14 @@
 package lab2.models;
 
 public class TableRow {
-    private int x;
+    private double x;
     private double y;
-    private double r;
+    private int r;
     private String currentTime;
     private String time;
     private String result;
 
-    public TableRow(int x, double y, double r, String currentTime, String time, String result) {
+    public TableRow(double x, double y, int r, String currentTime, String time, String result) {
         this.x = x;
         this.y = y;
         this.r = r;
@@ -17,7 +17,7 @@ public class TableRow {
         this.result = result;
     }
 
-    public int getX() {
+    public double getX() {
         return x;
     }
 
@@ -25,7 +25,7 @@ public class TableRow {
         return y;
     }
 
-    public double getR() {
+    public int getR() {
         return r;
     }
 

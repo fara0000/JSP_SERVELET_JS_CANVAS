@@ -10,7 +10,7 @@ function checkX() {
     if(xVal === '') {
         return false;
     }
-    if ((xVal > 2 || xVal < -4) || !/^[0-9 | . | - ]+$/i.test(xVal) || /^[ ]+$/.test(xVal) || xVal === '.') {
+    if (xVal > 2 || xVal < -4 || xVal === '.') {
         x.classList.add("error");
         return false;
     }
