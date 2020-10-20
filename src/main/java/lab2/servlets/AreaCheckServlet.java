@@ -43,17 +43,20 @@ public class AreaCheckServlet extends HttpServlet {
     }
 
     private boolean checkArea(double x, double y, int r) {
+        if(x > 0 && y > 0) {
+            return false;
+        }
         if (x == 0) {
-            return (y <= r && y >= -r / 2);
-        } else if (x > 0) {
-            return (x * x + y * y <= r * r / 4);
+            return (y <= r && y >= -r);
+        } else if (x < 0) {
+            return (x * x + y * y <= r * r);
         } else return (y <= x + r && y >= 0)
-                || (x >= -r && y >= -r / 2 && y <= 0);
+                || (x >= -r && y >= -r && y <= 0);
     }
 
     private boolean checkValues(double x, double y, int r) {
         return (x < 3 && x > -5) &&
-                Arrays.asList(-2.0, -1.5, -1.0, -0.5, 0, 0.5, 1.5, 2.0).contains(y) &&
+                Arrays.asList(-2.0, -1.5, -1.0, -0.5, 0, 0.5, 1.0, 1.5, 2.0).contains(y) &&
                 Arrays.asList(1, 2, 3, 4, 5).contains(r);
     }
 }
