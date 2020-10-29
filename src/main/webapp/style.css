@@ -198,6 +198,7 @@ form p {
 .table_container {
     display: flex;
     height: 90%;
+    overflow-y: scroll;
 }
 /*result of table from back*/
 
