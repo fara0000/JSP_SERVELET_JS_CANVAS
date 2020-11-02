@@ -19,6 +19,7 @@ public class AreaCheckServlet extends HttpServlet {
             long startTime = System.nanoTime();
             String currentTime = new Date().toString();
             String xValue = request.getParameter("coordinate_x").replace(',', '.');
+            System.out.println(xValue);
             if (xValue.length() > 6) {
                 xValue = xValue.substring(0, 6);
             }
@@ -43,28 +44,24 @@ public class AreaCheckServlet extends HttpServlet {
     }
 
     private boolean checkArea(double x, double y, int r) {
-//        if(y == 0 && x == 0) {
-//            return true;
-//        }
         if(x > 0 && y > 0) {
             return false;
         }
-        if (x >= 0 && y <= 0 && y > 2*x - r) {
+        if (x >= 0 && y <= 0 && y >= 2*x - r) {
             return true;
         }
-//        if(y <= 0 && x <= 0 && x > 0.5 && y >= -2) {
-//            return true;
-//        }
-//        if (x == 0) {
-//            return (y <= r && y >= -r);
-//        } else if (x < 0) {
-//            return (x * x + y * y <= r * r);}
-            else return (y <= x + r && y >= 0) || (x >= -r && y >= -r && y <= 0);
+        if(y <= 0 && x <= 0 && x >= r * -0.5 && y >= r * -1) {
+            return true;
+        }
+        if(y >= 0 && x <= 0 && x * x + y * y <= r * r) {
+            return true;
+        }
+        return false;
     }
 
     private boolean checkValues(double x, double y, int r) {
         return (x < 3 && x > -5) &&
-                Arrays.asList(-2.0, -1.5, -1.0, -0.5, 0, 0.5, 1.0, 1.5, 2.0).contains(y) &&
+                Arrays.asList(-2.0d, -1.5d, -1.0d, -0.5d, 0d, 0.5d, 1.0d, 1.5d, 2.0d).contains(y) &&
                 Arrays.asList(1, 2, 3, 4, 5).contains(r);
     }
 }
